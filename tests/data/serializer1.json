@@ -1,0 +1,33 @@
+{
+  "categoryIDs": [
+    "category1",
+    "category2"
+  ],
+  "createdAt": "2021-01-01T00:00:00Z",
+  "currency": "EUR",
+  "description": "Product description",
+  "images": [],
+  "productID": "product-1",
+  "productUrl": "https://example.com/product",
+  "status": "inStock",
+  "tags": [
+    "tag1",
+    "tag2"
+  ],
+  "title": "Apple Juice",
+  "type": "product-type",
+  "updatedAt": "2021-01-01T00:00:00Z",
+  "variants": [
+    {
+      "imageID": "image-id",
+      "oldPrice": 1299,
+      "price": 1399,
+      "productUrl": "https://example.com/product",
+      "sku": "apple-1",
+      "status": "inStock",
+      "title": "Apple Juice in a bottle",
+      "variantID": "product-1-1"
+    }
+  ],
+  "vendor": "Vendor name"
+}

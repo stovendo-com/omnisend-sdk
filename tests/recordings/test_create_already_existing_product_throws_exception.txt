@@ -1,0 +1,8 @@
+HTTP/1.1 422 Unprocessable Entity
+date: Wed, 08 May 2024 19:01:04 GMT
+content-type: application/json; charset=utf-8
+content-length: 63
+via: 1.1 google
+server: cloudflare
+
+{"error":"Product with 'product-new' productID already exists"}

@@ -1,0 +1,53 @@
+{
+  "name": "stovendo/omnisend",
+  "description": "Unofficial API client library for interacting with the Omnisend API.",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Jacek Kobus",
+      "email": "kobus.jacek@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.3",
+    "ext-json": "*",
+    "php-http/discovery": "^1.19",
+    "phpdocumentor/type-resolver": "^1.8",
+    "psr/http-factory": "^1.1",
+    "psr/http-factory-implementation": "*",
+    "psr/http-message": "^2.0",
+    "psr/log": "^3.0",
+    "symfony/property-access": "^7.1",
+    "symfony/property-info": "^7.1",
+    "symfony/serializer": "^7.1",
+    "webmozart/assert": "^1.11"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.58",
+    "nyholm/psr7": "^1.8",
+    "php-http/vcr-plugin": "^1.2",
+    "phpstan/phpstan": "^1.11",
+    "phpunit/phpunit": "^11.2",
+    "symfony/dotenv": "^7.1",
+    "symfony/http-client": "^7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Stovendo\\Omnisend\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Stovendo\\Omnisend\\Tests\\": "tests/"
+    }
+
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": false
+    },
+    "sort-packages": true
+  }
+}

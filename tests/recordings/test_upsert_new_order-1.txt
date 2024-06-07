@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Tue, 28 May 2024 13:28:37 GMT
+content-type: application/json
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"orderID":"order-2","email":"john.doe@example.com"}

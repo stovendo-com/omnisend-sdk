@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Fri, 24 May 2024 00:38:03 GMT
+content-type: application/json
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"contacts":[{"email":"john.doe@example.com","contactID":"663cf8de1f539fef85c321f9","createdAt":"2024-05-09T16:25:02Z","firstName":"John","lastName":"Doe","country":"Lithuania","countryCode":"LT","state":"Vilnius","city":"Vilnius","postalCode":"LT-12345","address":"Street 1","gender":"","phone":null,"birthdate":"1990-01-01","status":"subscribed","tags":["tag1","tag2"],"segments":["663a31f0438b8341a1c52d56"],"statuses":[{"channel":"email","status":"subscribed","date":"2024-05-09T16:25:02Z"},{"channel":"email","status":"subscribed","date":"2024-05-09T16:25:02.332Z"},{"channel":"email","status":"subscribed","date":"2024-05-24T00:30:19Z"},{"channel":"email","status":"subscribed","date":"2024-05-24T00:34:02Z"}],"optIns":[{"channel":"email","date":"2024-05-09T16:25:02Z"},{"channel":"email","date":"2024-05-09T16:25:02.332Z"},{"channel":"email","date":"2024-05-24T00:30:19Z"},{"channel":"email","date":"2024-05-24T00:34:02Z"}],"consents":null,"customProperties":{"externalCreated":"2024-05-09T16:25:02Z"},"identifiers":[{"id":"john.doe@example.com","type":"email","channels":{"email":{"status":"subscribed","statusDate":"2024-05-24T00:34:08.426Z"}}}]}],"paging":{"previous":null,"next":null,"offset":0,"limit":100}}

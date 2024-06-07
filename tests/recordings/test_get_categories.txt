@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Thu, 09 May 2024 14:19:40 GMT
+content-type: application/json; charset=utf-8
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"categories":[{"categoryID":"category-2","title":"Category title","createdAt":"2024-05-09T14:15:36.417Z","updatedAt":"2024-05-09T14:15:36.417Z"}],"paging":{"previous":null,"next":"https://api.omnisend.com/v3/categories?offset=0","offset":0,"limit":0}}

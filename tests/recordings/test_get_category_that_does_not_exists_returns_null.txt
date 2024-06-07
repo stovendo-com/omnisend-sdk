@@ -1,0 +1,8 @@
+HTTP/1.1 422 Unprocessable Entity
+date: Thu, 09 May 2024 14:11:05 GMT
+content-type: application/json; charset=utf-8
+content-length: 61
+via: 1.1 google
+server: cloudflare
+
+{"error":"Category with 'category-404' categoryID not found"}

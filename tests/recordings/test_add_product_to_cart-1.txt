@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Sun, 12 May 2024 23:04:36 GMT
+content-type: application/json
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"cartID":"cart-1","cartProductID":"cart-product-1","productID":"product-1","variantID":"product-1-1"}

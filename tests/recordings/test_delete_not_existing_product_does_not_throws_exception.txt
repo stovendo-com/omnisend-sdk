@@ -1,0 +1,17 @@
+HTTP/1.1 422 Unprocessable Entity
+date: Thu, 09 May 2024 13:03:56 GMT
+content-type: application/json; charset=utf-8
+content-length: 29
+x-rate-limit-limit: 400
+x-rate-limit-remaining: 399
+x-rate-limit-reset: 60
+x-envoy-upstream-service-time: 12
+via: 1.1 google
+alt-svc: h3=":443"; ma=86400
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=m73j0TUyzBLcLBi4IzY7nqMC0S_NNYglrcdrzNWi0jU-1715259836-1.0.1.1-qhzgYRB9rVh.W8fzaG1eJ5cQrqhkInoCGBtlXT2uMkYmYW1mvDnR0tkWZl1j9gpFQZBnlqoB.msA3bxQFZOuzw; path=/; expires=Thu, 09-May-24 13:33:56 GMT; domain=.api.omnisend.com; HttpOnly; Secure; SameSite=None
+strict-transport-security: max-age=15552000
+server: cloudflare
+cf-ray: 8811e47bbf15b18b-WAW
+
+{"error":"product not found"}

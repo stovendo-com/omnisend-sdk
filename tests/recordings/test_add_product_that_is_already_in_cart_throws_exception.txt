@@ -1,0 +1,8 @@
+HTTP/1.1 422 Unprocessable Entity
+date: Fri, 17 May 2024 14:18:53 GMT
+content-type: application/json
+content-length: 84
+via: 1.1 google
+server: cloudflare
+
+{"error":" *Product with cartProductID cart-product-1 already exists in the Cart; "}

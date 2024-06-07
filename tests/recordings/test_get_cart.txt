@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Sun, 12 May 2024 19:46:36 GMT
+content-type: application/json
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"cartID":"cart-3","email":"john@doe.example.com"}

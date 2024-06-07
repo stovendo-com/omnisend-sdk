@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Wed, 08 May 2024 19:01:58 GMT
+content-type: application/json; charset=utf-8
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"productID":"product-new","title":"Apple Juice","status":"inStock","description":"Product description","currency":"EUR","images":[],"productUrl":"https://example.com/product","vendor":"Vendor name","type":"product-type","categoryIDs":["category1","category2"],"tags":["tag1","tag2"],"createdAt":"2021-01-01T00:00:00Z","updatedAt":"2021-01-01T00:00:00Z","variants":[{"variantID":"product-1-1","title":"Apple Juice in a bottle","sku":"apple-1","price":1399,"oldPrice":1299,"productUrl":"https://example.com/product","status":"inStock","imageID":""}]}

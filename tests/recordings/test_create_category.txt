@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Thu, 09 May 2024 14:15:36 GMT
+content-type: application/json; charset=utf-8
+content-length: 27
+via: 1.1 google
+server: cloudflare
+
+{"categoryID":"category-2"}

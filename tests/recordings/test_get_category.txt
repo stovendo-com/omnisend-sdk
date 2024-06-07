@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Thu, 09 May 2024 14:08:00 GMT
+content-type: application/json; charset=utf-8
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"categoryID":"category-1","title":"Category title","createdAt":"2024-05-09T13:38:54.49Z","updatedAt":"2024-05-09T13:38:54.49Z"}
