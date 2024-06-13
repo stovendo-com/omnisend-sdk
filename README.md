@@ -29,8 +29,13 @@ Here is a basic example of how to use the SDK:
 require 'vendor/autoload.php';
 
 use Stovendo\Omnisend\OmnisendApiClient;
+use \Stovendo\Omnisend\OmnisendFactory;
 
+// use the client directly
 $client = new OmnisendApiClient('YOUR_API_KEY');
+
+// or use the factory
+$client = (new OmnisendFactory())->create('YOUR_API_KEY');
 
 // check connection
 $isConnected = $client->ping();
