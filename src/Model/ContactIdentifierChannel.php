@@ -27,9 +27,9 @@ use Webmozart\Assert\Assert;
 #[Context(context: [AbstractObjectNormalizer::SKIP_NULL_VALUES => false])]
 class ContactIdentifierChannel
 {
-    public const string STATUS_SUBSCRIBED = 'subscribed';
-    public const string STATUS_UNSUBSCRIBED = 'unsubscribed';
-    public const string STATUS_NON_SUBSCRIBED = 'nonSubscribed';
+    public const STATUS_SUBSCRIBED = 'subscribed';
+    public const STATUS_UNSUBSCRIBED = 'unsubscribed';
+    public const STATUS_NON_SUBSCRIBED = 'nonSubscribed';
 
     public function __construct(
         public string $status,

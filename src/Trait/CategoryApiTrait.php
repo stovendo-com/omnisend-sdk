@@ -26,8 +26,6 @@ use Stovendo\Omnisend\Model\Category;
 
 trait CategoryApiTrait
 {
-    private const string ENDPOINT_CATEGORIES = '/categories';
-
     public function getCategory(string $categoryId): ?Category
     {
         try {
