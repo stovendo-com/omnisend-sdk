@@ -37,7 +37,7 @@ use Symfony\Component\Serializer\Serializer as SymfonySerializer;
 
 class Serializer
 {
-    public const string DATE_FORMAT = 'Y-m-d\TH:i:s\Z';
+    public const DATE_FORMAT = 'Y-m-d\TH:i:s\Z';
     private SymfonySerializer $serializer;
 
     public function __construct(

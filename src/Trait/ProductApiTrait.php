@@ -26,7 +26,7 @@ use Stovendo\Omnisend\Model\Products;
 
 trait ProductApiTrait
 {
-    private const string ENDPOINT_PRODUCTS = '/products';
+    private const ENDPOINT_PRODUCTS = '/products';
 
     public function getProduct(string $productId): ?Product
     {

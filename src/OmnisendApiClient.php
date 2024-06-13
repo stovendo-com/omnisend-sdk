@@ -44,6 +44,8 @@ readonly class OmnisendApiClient implements OmnisendApi
     use OrderApiTrait;
     use ProductApiTrait;
 
+    private const ENDPOINT_CATEGORIES = '/categories';
+
     public function __construct(
         private string $apikey,
         private ClientInterface $httpClient = new Psr18Client(),

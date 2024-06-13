@@ -27,7 +27,7 @@ use Stovendo\Omnisend\Model\NewContactSuccess;
 
 trait ContactApiTrait
 {
-    private const string ENDPOINT_CONTACTS = '/contacts';
+    private const ENDPOINT_CONTACTS = '/contacts';
 
     public function createContact(NewContact $contact): Contact
     {

@@ -26,57 +26,57 @@ class Order
     /**
      * Payment awaiting payment.
      */
-    public const string STATUS_AWAITING_PAYMENT = 'awaitingPayment';
+    public const STATUS_AWAITING_PAYMENT = 'awaitingPayment';
 
     /**
      * Payment partially paid.
      */
-    public const string STATUS_PARTIALLY_PAID = 'partiallyPaid';
+    public const STATUS_PARTIALLY_PAID = 'partiallyPaid';
 
     /**
      * Payment paid.
      */
-    public const string STATUS_PAID = 'paid';
+    public const STATUS_PAID = 'paid';
 
     /**
      * Payment partially refunded.
      */
-    public const string STATUS_PARTIALLY_REFUNDED = 'partiallyRefunded';
+    public const STATUS_PARTIALLY_REFUNDED = 'partiallyRefunded';
 
     /**
      * Payment refunded.
      */
-    public const string STATUS_REFUNDED = 'refunded';
+    public const STATUS_REFUNDED = 'refunded';
 
     /**
      * Payment canceled.
      */
-    public const string STATUS_VOIDED = 'voided';
+    public const STATUS_VOIDED = 'voided';
 
     /**
      * Order placed.
      */
-    public const string FULFILLMENT_STATUS_UNFULFILLED = 'unfulfilled';
+    public const FULFILLMENT_STATUS_UNFULFILLED = 'unfulfilled';
 
     /**
      * Order in progress.
      */
-    public const string FULFILLMENT_STATUS_IN_PROGRESS = 'inProgress';
+    public const FULFILLMENT_STATUS_IN_PROGRESS = 'inProgress';
 
     /**
      * Order prepared for pickup (if delivery type pickup selected) or shipped.
      */
-    public const string FULFILLMENT_STATUS_FULFILLED = 'fulfilled';
+    public const FULFILLMENT_STATUS_FULFILLED = 'fulfilled';
 
     /**
      * Order has been picked up by or delivered to customer.
      */
-    public const string FULFILLMENT_STATUS_DELIVERED = 'delivered';
+    public const FULFILLMENT_STATUS_DELIVERED = 'delivered';
 
     /**
      * Restocked.
      */
-    public const string FULFILLMENT_STATUS_RESTOCKED = 'restocked';
+    public const FULFILLMENT_STATUS_RESTOCKED = 'restocked';
 
     /**
      * @param array<OrderItemProduct> $orderItems

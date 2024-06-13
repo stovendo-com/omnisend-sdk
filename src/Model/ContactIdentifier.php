@@ -25,8 +25,8 @@ use Webmozart\Assert\Assert;
 
 class ContactIdentifier
 {
-    public const string TYPE_EMAIL = 'email';
-    public const string TYPE_PHONE = 'phone';
+    public const TYPE_EMAIL = 'email';
+    public const TYPE_PHONE = 'phone';
 
     /**
      * @param string $id This is either an email or phone number, depending on the type
