@@ -12,6 +12,7 @@ use Stovendo\Omnisend\Exception\InvalidArgumentException;
 use Stovendo\Omnisend\Exception\ProductAlreadyExistsException;
 use Stovendo\Omnisend\Model\Cart;
 use Stovendo\Omnisend\Model\CartProduct;
+use Stovendo\Omnisend\Model\CartReplacement;
 use Stovendo\Omnisend\Model\CartUpdate;
 use Stovendo\Omnisend\Model\Categories;
 use Stovendo\Omnisend\Model\Category;
@@ -54,6 +55,12 @@ interface OmnisendApi
      * Update cart. Use to update cart info - add products or update existing in cart products.
      */
     public function updateCart(Cart|CartUpdate $cart): void;
+
+    public function upsertCart(Cart $cart): void;
+
+    public function replaceCart(Cart|CartReplacement $cart): void;
+
+    public function deleteCart(string|Cart $cart): void;
 
     public function addProductToCart(string $cartId, CartProduct $cartProduct): void;
 

@@ -1,0 +1,8 @@
+HTTP/1.1 404 Not Found
+date: Mon, 17 Jun 2024 17:16:28 GMT
+content-type: application/json
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"error":"Cart with 'cart-that-does-not-exists-yet-1' cartID not found"}

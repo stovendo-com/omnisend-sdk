@@ -1,0 +1,24 @@
+{
+  "cartID": "cart-1",
+  "currency": "EUR",
+  "cartSum": 1560,
+  "products": [
+    {
+      "cartProductID": "cart-product-1",
+      "productID": "product-1",
+      "variantID": "product-1-1",
+      "title": "Apple Juice in a bottle",
+      "price": 1560,
+      "quantity": 1,
+      "sku": null,
+      "description": null,
+      "oldPrice": null,
+      "discount": null,
+      "imageUrl": null,
+      "productUrl": null
+    }
+  ],
+  "cartRecoveryUrl": "https://example.com/cart-recovery",
+  "createdAt": null,
+  "updatedAt": null
+}
