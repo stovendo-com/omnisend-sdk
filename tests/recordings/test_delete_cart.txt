@@ -1,8 +1,8 @@
-HTTP/1.1 404 Not Found
-date: Mon, 17 Jun 2024 17:38:53 GMT
+HTTP/1.1 200 OK
+date: Thu, 20 Jun 2024 14:16:16 GMT
 content-type: application/json
-content-length: 47
 via: 1.1 google
 server: cloudflare
+content-encoding: gzip
 
-{"error":"Cart with 'cart-1' cartID not found"}
+{"cartID":"cart-5","email":"john@doe.example.com"}

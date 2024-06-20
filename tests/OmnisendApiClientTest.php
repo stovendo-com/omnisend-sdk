@@ -267,10 +267,18 @@ class OmnisendApiClientTest extends TestCase
         $this->addToAssertionCount(1);
     }
 
+    /**
+     * @see https://github.com/stovendo-com/omnisend-sdk/pull/4#issuecomment-2180817901
+     */
     public function test_delete_cart(): void
     {
         $cart = OmnisendFixtures::createCart();
+        $cart->cartID = 'cart-5';
+
         $client = $this->createClient();
+        $client->createCart($cart);
+        $cart = $client->getCart($cart->cartID);
+        $this->assertNotNull($cart);
         $client->deleteCart($cart);
         $this->addToAssertionCount(1);
     }
