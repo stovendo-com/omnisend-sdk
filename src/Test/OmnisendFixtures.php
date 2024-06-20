@@ -87,10 +87,11 @@ class OmnisendFixtures
     public static function createCart(): Cart
     {
         return new Cart(
-            cartID: 'cart-1',
+            cartID: 'cart1',
             currency: 'EUR',
             cartSum: 1560,
             email: 'john@doe.example.com',
+            cartRecoveryUrl: 'https://example.com/cart-recovery',
             products: [
                 self::createCartProduct(),
             ],
@@ -106,7 +107,6 @@ class OmnisendFixtures
             title: 'Apple Juice in a bottle',
             price: 1560,
             quantity: 1,
-            currency: 'EUR',
         );
     }
 

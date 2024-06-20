@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+date: Thu, 20 Jun 2024 14:16:17 GMT
+content-type: application/json
+via: 1.1 google
+server: cloudflare
+content-encoding: gzip
+
+{"contactID":"66411c9c2441b5b910348474","cartID":"cart-5","email":"john@doe.example.com","phone":"","currency":"EUR","cartRecoveryUrl":"https://example.com/cart-recovery","createdAt":"2024-06-20T14:16:16.694Z","updatedAt":"2024-06-20T14:16:16.694Z","emailID":null,"attributionID":"","cartSum":1560,"products":[{"cartProductID":"cart-product-1","productID":"product-1","variantID":"product-1-1","title":"Apple Juice in a bottle","description":"","quantity":1,"price":1560,"oldPrice":null,"discount":0,"productUrl":"","imageUrl":"","sku":""}]}

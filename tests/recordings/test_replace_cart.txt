@@ -1,8 +1,8 @@
 HTTP/1.1 200 OK
-date: Thu, 20 Jun 2024 14:16:42 GMT
+date: Mon, 17 Jun 2024 17:03:56 GMT
 content-type: application/json
 via: 1.1 google
 server: cloudflare
 content-encoding: gzip
 
-{"cartID":"cart1","email":"john@doe.example.com"}
+{"cartID":"cart-1","email":"john@doe.example.com"}

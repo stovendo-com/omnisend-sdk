@@ -18,6 +18,7 @@ use Http\Discovery\Psr18Client;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
+use Stovendo\Omnisend\Exception\CartNotFoundException;
 use Stovendo\Omnisend\Exception\CategoryAlreadyExistsException;
 use Stovendo\Omnisend\Exception\CategoryNotFoundException;
 use Stovendo\Omnisend\Exception\ProductAlreadyExistsException;
@@ -222,9 +223,70 @@ class OmnisendApiClientTest extends TestCase
         $this->assertInstanceOf(Cart::class, $cart);
         $this->assertNotNull($cart->contactID);
         $this->assertArrayHasKey(0, $cart->products);
-        $this->assertNull($cart->products[0]->currency);
         $this->assertInstanceOf(DateTimeImmutable::class, $cart->createdAt);
         $this->assertInstanceOf(DateTimeImmutable::class, $cart->updatedAt);
+    }
+
+    public function test_replace_cart(): void
+    {
+        $cart = OmnisendFixtures::createCart();
+        $client = $this->createClient();
+
+        $client->replaceCart($cart);
+        $this->addToAssertionCount(1);
+    }
+
+    public function test_replace_not_existing_cart_throws_exception(): void
+    {
+        $this->expectException(CartNotFoundException::class);
+
+        $cart = OmnisendFixtures::createCart();
+        $cart->cartID = 'cart-that-does-not-exists-yet-0';
+        $client = $this->createClient();
+
+        $client->replaceCart($cart);
+    }
+
+    public function test_upsert_cart(): void
+    {
+        $cart = OmnisendFixtures::createCart();
+        $cart->cartID = 'cart-that-does-not-exists-yet-1';
+        $client = $this->createClient();
+
+        $client->upsertCart($cart);
+        $this->addToAssertionCount(1);
+    }
+
+    public function test_upsert_cart_that_already_exists(): void
+    {
+        $cart = OmnisendFixtures::createCart();
+        $cart->cartID = 'cart-1';
+        $client = $this->createClient();
+
+        $client->upsertCart($cart);
+        $this->addToAssertionCount(1);
+    }
+
+    /**
+     * @see https://github.com/stovendo-com/omnisend-sdk/pull/4#issuecomment-2180817901
+     */
+    public function test_delete_cart(): void
+    {
+        $cart = OmnisendFixtures::createCart();
+        $cart->cartID = 'cart-5';
+
+        $client = $this->createClient();
+        $client->createCart($cart);
+        $cart = $client->getCart($cart->cartID);
+        $this->assertNotNull($cart);
+        $client->deleteCart($cart);
+        $this->addToAssertionCount(1);
+    }
+
+    public function test_delete_not_existing_cart(): void
+    {
+        $this->createClient()->deleteCart('cart-404');
+        $this->addToAssertionCount(1);
     }
 
     public function test_get_not_existing_cart_returns_null(): void
