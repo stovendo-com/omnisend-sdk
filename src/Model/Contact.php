@@ -10,6 +10,7 @@ namespace Stovendo\Omnisend\Model;
 
 use DateTimeImmutable;
 use Stovendo\Omnisend\OmnisendException;
+use Symfony\Component\Serializer\Attribute\Ignore;
 
 class Contact
 {
@@ -66,15 +67,81 @@ class Contact
         $this->getEmailIdentifier()->getEmailChannel()->status = ContactIdentifierChannel::STATUS_NON_SUBSCRIBED;
     }
 
+    #[Ignore]
     public function setEmailSubscriptionStatus(string $status): void
     {
         $this->getEmailIdentifier()->getEmailChannel()->status = $status;
     }
 
+    public function subscribePhone(): void
+    {
+        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = ContactIdentifierChannel::STATUS_SUBSCRIBED;
+    }
+
+    public function unsubscribePhone(): void
+    {
+        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = ContactIdentifierChannel::STATUS_UNSUBSCRIBED;
+    }
+
+    public function resetPhoneSubscriptionStatus(): void
+    {
+        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = ContactIdentifierChannel::STATUS_NON_SUBSCRIBED;
+    }
+
+    #[Ignore]
+    public function setPhoneSubscriptionStatus(string $status): void
+    {
+        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = $status;
+    }
+
+    #[Ignore]
+    public function getPhone(): ?string
+    {
+        return $this->getPhoneIdentifier()?->id;
+    }
+
+    #[Ignore]
+    public function setPhone(string $phone): void
+    {
+        $phoneIdentifier = $this->getPhoneIdentifier();
+
+        if ($phoneIdentifier) {
+            $phoneIdentifier->id = $phone;
+        } else {
+            $this->identifiers[] = ContactIdentifier::phone(
+                $phone,
+                ContactIdentifierChannel::STATUS_NON_SUBSCRIBED,
+            );
+        }
+    }
+
+    #[Ignore]
     private function getEmailIdentifier(): ContactIdentifier
     {
-        $identifier = array_filter($this->identifiers, fn (ContactIdentifier $identifier) => $identifier->isEmail())[0] ?? null;
+        foreach ($this->identifiers as $identifier) {
+            if ($identifier->isEmail()) {
+                return $identifier;
+            }
+        }
 
-        return $identifier ?? throw new OmnisendException('Contact does not have an email identifier');
+        throw new OmnisendException('Contact does not have an email identifier');
+    }
+
+    #[Ignore]
+    private function getPhoneIdentifier(): ?ContactIdentifier
+    {
+        foreach ($this->identifiers as $identifier) {
+            if ($identifier->isPhone()) {
+                return $identifier;
+            }
+        }
+
+        return null;
+    }
+
+    #[Ignore]
+    private function getPhoneIdentifierOrFail(): ContactIdentifier
+    {
+        return $this->getPhoneIdentifier() ?? throw new OmnisendException('Contact does not have a phone identifier');
     }
 }

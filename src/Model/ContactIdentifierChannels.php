@@ -22,8 +22,8 @@ class ContactIdentifierChannels
         #[Context(context: [AbstractObjectNormalizer::SKIP_NULL_VALUES => true])]
         public ?ContactIdentifierChannel $email = null,
         #[Context(context: [AbstractObjectNormalizer::SKIP_NULL_VALUES => true])]
-        public ?ContactIdentifierChannel $phone = null,
+        public ?ContactIdentifierChannel $sms = null,
     ) {
-        Assert::false($email === null && $phone === null, 'At least one channel must be provided');
+        Assert::false($email === null && $sms === null, 'At least one channel must be provided');
     }
 }

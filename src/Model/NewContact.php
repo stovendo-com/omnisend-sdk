@@ -54,4 +54,17 @@ class NewContact
             ],
         );
     }
+
+    public function addPhone(
+        string $phone,
+        string $status = ContactIdentifierChannel::STATUS_SUBSCRIBED,
+    ): void {
+        $this->identifiers[] = new ContactIdentifier(
+            id: $phone,
+            type: ContactIdentifier::TYPE_PHONE,
+            channels: new ContactIdentifierChannels(
+                sms: new ContactIdentifierChannel($status)
+            ),
+        );
+    }
 }

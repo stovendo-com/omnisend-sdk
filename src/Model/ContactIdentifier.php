@@ -28,7 +28,7 @@ class ContactIdentifier
         Assert::inArray($type, [self::TYPE_EMAIL, self::TYPE_PHONE]);
 
         if ($this->isPhone()) {
-            Assert::notNull($this->channels->phone);
+            Assert::notNull($this->channels->sms);
         }
 
         if ($this->isEmail()) {
@@ -48,6 +48,7 @@ class ContactIdentifier
         return $this->type === self::TYPE_PHONE;
     }
 
+    #[Ignore]
     public function getEmailChannel(): ContactIdentifierChannel
     {
         if (!$this->isEmail()) {
@@ -57,6 +58,18 @@ class ContactIdentifier
         Assert::notNull($this->channels->email);
 
         return $this->channels->email;
+    }
+
+    #[Ignore]
+    public function getPhoneChannel(): ContactIdentifierChannel
+    {
+        if (!$this->isPhone()) {
+            throw new OmnisendException('This identifier is not a phone, therefore it does not have a phone channel');
+        }
+
+        Assert::notNull($this->channels->sms);
+
+        return $this->channels->sms;
     }
 
     /**
@@ -72,6 +85,6 @@ class ContactIdentifier
      */
     public static function phone(string $phone, string $status = ContactIdentifierChannel::STATUS_SUBSCRIBED): self
     {
-        return new self($phone, self::TYPE_PHONE, new ContactIdentifierChannels(phone: new ContactIdentifierChannel($status)));
+        return new self($phone, self::TYPE_PHONE, new ContactIdentifierChannels(sms: new ContactIdentifierChannel($status)));
     }
 }
