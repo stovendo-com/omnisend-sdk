@@ -22,6 +22,7 @@ use Stovendo\Omnisend\Exception\ProductNotFoundException;
 use Stovendo\Omnisend\Trait\CartApiTrait;
 use Stovendo\Omnisend\Trait\CategoryApiTrait;
 use Stovendo\Omnisend\Trait\ContactApiTrait;
+use Stovendo\Omnisend\Trait\CustomEventApiTrait;
 use Stovendo\Omnisend\Trait\OrderApiTrait;
 use Stovendo\Omnisend\Trait\ProductApiTrait;
 
@@ -30,6 +31,7 @@ readonly class OmnisendApiClient implements OmnisendApi
     use CartApiTrait;
     use CategoryApiTrait;
     use ContactApiTrait;
+    use CustomEventApiTrait;
     use OrderApiTrait;
     use ProductApiTrait;
 

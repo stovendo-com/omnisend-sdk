@@ -17,6 +17,7 @@ use Stovendo\Omnisend\Model\CartUpdate;
 use Stovendo\Omnisend\Model\Categories;
 use Stovendo\Omnisend\Model\Category;
 use Stovendo\Omnisend\Model\Contact;
+use Stovendo\Omnisend\Model\CustomEvent;
 use Stovendo\Omnisend\Model\NewContact;
 use Stovendo\Omnisend\Model\Order;
 use Stovendo\Omnisend\Model\Product;
@@ -97,4 +98,6 @@ interface OmnisendApi
      * @return Products<Product>
      */
     public function getProducts(int $offset = 0, int $limit = 250): Products;
+
+    public function triggerCustomEvent(CustomEvent $event): void;
 }
