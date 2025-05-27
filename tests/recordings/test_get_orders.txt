@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+date: Tue, 21 May 2024 11:28:12 GMT
+content-type: application/json; charset=utf-8
+via: 1.1 google
+server: cloudflare
+
+{"orders":[{"orderID":"order-1","email":"john.doe@example.com","orderNumber":10001,"currency":"EUR","orderSum":3120,"createdAt":"2021-01-01T00:00:00Z","paymentStatus":"paid","fulfillmentStatus":"fulfilled","orderItems":[{"productID":"product-1","sku":"apple-1","variantID":"product-1-1","variantTitle":"Apple Juice in a bottle","title":"Apple Juice in a bottle","price":1560,"quantity":1,"imageUrl":null,"productUrl":null,"categoryIDs":[]},{"productID":"product-2","sku":"banana-1","variantID":"product-2-1","variantTitle":"Banana Juice in a bottle","title":"Banana Juice in a bottle","price":1560,"quantity":1,"imageUrl":null,"productUrl":null,"categoryIDs":[]}]}]}
