@@ -30,7 +30,11 @@ trait CategoryApiTrait
             throw new InvalidArgumentException('Limit cannot be greater than 250');
         }
 
-        return $this->get(self::ENDPOINT_CATEGORIES, Categories::class);
+        return $this->get(
+            self::ENDPOINT_CATEGORIES,
+            Categories::class,
+            ['offset' => $offset, 'limit' => $limit]
+        );
     }
 
     public function createCategory(Category $category): void
