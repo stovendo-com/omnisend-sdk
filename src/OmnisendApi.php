@@ -20,6 +20,7 @@ use Stovendo\Omnisend\Model\Contact;
 use Stovendo\Omnisend\Model\CustomEvent;
 use Stovendo\Omnisend\Model\NewContact;
 use Stovendo\Omnisend\Model\Order;
+use Stovendo\Omnisend\Model\Orders;
 use Stovendo\Omnisend\Model\Product;
 use Stovendo\Omnisend\Model\Products;
 
@@ -74,6 +75,10 @@ interface OmnisendApi
     public function replaceOrder(Order $order): void;
 
     public function upsertOrder(Order $order): void;
+
+    public function deleteOrder(string $orderId): void;
+
+    public function getOrders(int $offset = 0, int $limit = 250): Orders;
 
     public function getProduct(string $productId): ?Product;
 

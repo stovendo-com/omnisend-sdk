@@ -390,6 +390,25 @@ class OmnisendApiClientTest extends TestCase
         $this->addToAssertionCount(1);
     }
 
+    public function test_get_orders(): void
+    {
+        $orders = $this->createClient()->getOrders();
+        $this->assertNotEmpty($orders);
+        $this->assertContainsOnlyInstancesOf(Order::class, $orders);
+    }
+
+    public function test_delete_order(): void
+    {
+        $this->createClient()->deleteOrder('order-1');
+        $this->addToAssertionCount(1);
+    }
+
+    public function test_delete_not_existing_order_does_not_throw_exception(): void
+    {
+        $this->createClient()->deleteOrder('order-404');
+        $this->addToAssertionCount(1);
+    }
+
     private function createClient(): OmnisendApi
     {
         $apikey = $_ENV['OMNISEND_TEST_APIKEY'] ?? 'none';
