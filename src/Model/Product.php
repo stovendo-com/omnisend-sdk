@@ -35,7 +35,7 @@ class Product
         public ?string $type = null,
         public ?DateTimeImmutable $createdAt = null,
         public ?array $tags = [],
-        public array $categoryIDs = [],
+        public ?array $categoryIDs = [],
         public array $images = [],
         public array $variants = [],
     ) {
