@@ -73,6 +73,18 @@ class Contact
         $this->getEmailIdentifier()->getEmailChannel()->status = $status;
     }
 
+    #[Ignore]
+    public function getEmail(): ?string
+    {
+        return $this->getEmailIdentifier()->id;
+    }
+
+    #[Ignore]
+    public function setEmail(string $email): void
+    {
+        $this->getEmailIdentifier()->id = $email;
+    }
+
     public function subscribePhone(): void
     {
         $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = ContactIdentifierChannel::STATUS_SUBSCRIBED;
