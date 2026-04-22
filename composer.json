@@ -4,8 +4,10 @@
   "type": "library",
   "authors": [
     {
-      "name": "Jacek Kobus",
-      "email": "kobus.jacek@gmail.com"
+      "name": "UAB NFQ Technologies",
+      "email": "info@nfq.lt",
+      "homepage": "https://www.nfq.lt",
+      "role": "Developer"
     }
   ],
   "license": "MIT",
