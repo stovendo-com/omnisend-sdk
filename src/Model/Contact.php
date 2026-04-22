@@ -52,25 +52,26 @@ class Contact
         $this->birthdate = $birthdate !== '' ? $birthdate : null;
     }
 
-    public function subscribeEmail(): void
+    public function subscribeEmail(?DateTimeImmutable $statusDate = null): void
     {
-        $this->getEmailIdentifier()->getEmailChannel()->status = ContactIdentifierChannel::STATUS_SUBSCRIBED;
+        $this->setEmailSubscriptionStatus(ContactIdentifierChannel::STATUS_SUBSCRIBED, $statusDate);
     }
 
-    public function unsubscribeEmail(): void
+    public function unsubscribeEmail(?DateTimeImmutable $statusDate = null): void
     {
-        $this->getEmailIdentifier()->getEmailChannel()->status = ContactIdentifierChannel::STATUS_UNSUBSCRIBED;
+        $this->setEmailSubscriptionStatus(ContactIdentifierChannel::STATUS_UNSUBSCRIBED, $statusDate);
     }
 
-    public function resetEmailSubscriptionStatus(): void
+    public function resetEmailSubscriptionStatus(?DateTimeImmutable $statusDate = null): void
     {
-        $this->getEmailIdentifier()->getEmailChannel()->status = ContactIdentifierChannel::STATUS_NON_SUBSCRIBED;
+        $this->setEmailSubscriptionStatus(ContactIdentifierChannel::STATUS_NON_SUBSCRIBED, $statusDate);
     }
 
     #[Ignore]
-    public function setEmailSubscriptionStatus(string $status): void
+    public function setEmailSubscriptionStatus(string $status, ?DateTimeImmutable $statusDate = null): void
     {
         $this->getEmailIdentifier()->getEmailChannel()->status = $status;
+        $this->getEmailIdentifier()->getEmailChannel()->statusDate = $statusDate ?? new DateTimeImmutable();
     }
 
     #[Ignore]
@@ -85,25 +86,26 @@ class Contact
         $this->getEmailIdentifier()->id = $email;
     }
 
-    public function subscribePhone(): void
+    public function subscribePhone(?DateTimeImmutable $statusDate = null): void
     {
-        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = ContactIdentifierChannel::STATUS_SUBSCRIBED;
+        $this->setPhoneSubscriptionStatus(ContactIdentifierChannel::STATUS_SUBSCRIBED, $statusDate);
     }
 
-    public function unsubscribePhone(): void
+    public function unsubscribePhone(?DateTimeImmutable $statusDate = null): void
     {
-        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = ContactIdentifierChannel::STATUS_UNSUBSCRIBED;
+        $this->setPhoneSubscriptionStatus(ContactIdentifierChannel::STATUS_UNSUBSCRIBED, $statusDate);
     }
 
-    public function resetPhoneSubscriptionStatus(): void
+    public function resetPhoneSubscriptionStatus(?DateTimeImmutable $statusDate = null): void
     {
-        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = ContactIdentifierChannel::STATUS_NON_SUBSCRIBED;
+        $this->setPhoneSubscriptionStatus(ContactIdentifierChannel::STATUS_NON_SUBSCRIBED, $statusDate);
     }
 
     #[Ignore]
-    public function setPhoneSubscriptionStatus(string $status): void
+    public function setPhoneSubscriptionStatus(string $status, ?DateTimeImmutable $statusDate = null): void
     {
         $this->getPhoneIdentifierOrFail()->getPhoneChannel()->status = $status;
+        $this->getPhoneIdentifierOrFail()->getPhoneChannel()->statusDate = $statusDate ?? new DateTimeImmutable();
     }
 
     #[Ignore]
