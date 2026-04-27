@@ -15,6 +15,7 @@ use Psr\Http\Client\ClientInterface;
 use Stovendo\Omnisend\Exception\CartNotFoundException;
 use Stovendo\Omnisend\Exception\CategoryAlreadyExistsException;
 use Stovendo\Omnisend\Exception\CategoryNotFoundException;
+use Stovendo\Omnisend\Exception\ContactNotFoundException;
 use Stovendo\Omnisend\Exception\OrderNotFoundException;
 use Stovendo\Omnisend\Exception\ProductAlreadyExistsException;
 use Stovendo\Omnisend\Exception\ProductAlreadyInCartException;
@@ -163,6 +164,7 @@ readonly class OmnisendApiClient implements OmnisendApi
             '#Product with cartProductID (.*) already exists in the Cart#' => ProductAlreadyInCartException::class,
             '#Cart with (.*) cartID not found#' => CartNotFoundException::class,
             '#Order with \'(.*)\' orderID not found#' => OrderNotFoundException::class,
+            '#Contact not found#' => ContactNotFoundException::class,
         ];
 
         foreach ($map as $pattern => $exception) {
